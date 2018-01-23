@@ -44,7 +44,7 @@ namespace BrowserControlForm
             this.ScriptActions = actions;
         }
 
-        public void ToScript()
+        public string ToScript()
         {
             // WriteAllLines creates a file, writes a collection of strings to the file,
             // and then closes the file.  You do NOT need to call Flush() or Close().
@@ -70,7 +70,7 @@ namespace BrowserControlForm
                     if (action.ActionType == ControlActionTypes.Activate)
                     {
                         file.Write(findElementById);
-                        file.Write("'" + id + "'");
+                        file.Write("\"" + id + "\"");
                         file.WriteLine(sendkeys);
                     }
                 }
@@ -80,6 +80,7 @@ namespace BrowserControlForm
                 file.WriteLine(braceClose);
                 file.WriteLine(braceClose);
             }
+            return scriptFilePath;
         }
 
         public static String GetTimestamp(DateTime value)

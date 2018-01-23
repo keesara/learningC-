@@ -25,17 +25,21 @@ namespace BrowserControlForm
             webBrowser1.Navigate(textBox1.Text);
             CurrentBrowserData = new Browser();
             CurrentBrowserData.StartURL = textBox1.Text;
+            label2.Text = "Loading...";
         }
 
 
         private void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             label2.Text = textBox1.Text + " Loaded.";
+
         }
 
         void Document_Click(object sender, HtmlElementEventArgs e)
         {
             // Assign the selected object to property grid
+            label2.Text = "";
+            
             var selectedObject = ((HtmlDocument)sender).ActiveElement;
             Console.WriteLine("The mouse clicked position is " + e.ClientMousePosition);
             Console.WriteLine("The mouse has " + e.ToElement);
@@ -79,6 +83,7 @@ namespace BrowserControlForm
             webBrowser1.Document.Click += new HtmlElementEventHandler(this.Document_Click);
             //webBrowser1.Document.Focusing += new HtmlElementEventHandler(this.Document_Click);
             //webBrowser1.Document.MouseDown += new HtmlElementEventHandler(this.Document_Click);
+            label2.Text = "Spying ...";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -86,7 +91,8 @@ namespace BrowserControlForm
             Console.WriteLine("The URL is " + this.CurrentBrowserData.StartURL);
             Console.WriteLine("The Action is " + this.CurrentBrowserData.BrowserActions);
             WriteScript wscr = new WriteScript(this.CurrentBrowserData.StartURL, this.CurrentBrowserData.BrowserActions);
-            wscr.ToScript();
+            string scriptfilename = wscr.ToScript();
+            label2.Text = scriptfilename;
         }
 
         private void BrowserTool_Load(object sender, EventArgs e)

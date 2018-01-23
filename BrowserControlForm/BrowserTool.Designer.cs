@@ -39,8 +39,9 @@
             // 
             // webBrowser1
             // 
+            this.webBrowser1.AllowWebBrowserDrop = false;
             this.webBrowser1.Location = new System.Drawing.Point(21, 101);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1496, 620);
@@ -50,7 +51,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(141, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(947, 22);
             this.textBox1.TabIndex = 1;
@@ -68,7 +69,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1097, 33);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Location = new System.Drawing.Point(1205, 32);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 4;
@@ -122,7 +123,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BrowserTool";
             this.Text = "AutomationStart";
             this.Load += new System.EventHandler(this.BrowserTool_Load);
